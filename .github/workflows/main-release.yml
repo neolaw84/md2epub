@@ -11,6 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write  # Required for Trusted Publishing
+
+    # Use a dedicated environment for PyPI publishing (safer)
+    environment:
+      name: pypi
+      url: https://pypi.org/p/md2epub
+
     steps:
     - uses: actions/checkout@v3
       with:
@@ -67,5 +74,5 @@ jobs:
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        password: ${{ secrets.PYPI_API_TOKEN }}
+        # password is NOT required for Trusted Publishing
         packages_dir: dist/
