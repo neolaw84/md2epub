@@ -21,9 +21,6 @@ dev = [
     "mkdocstrings[python]",
 ]
 
-[tool.setuptools.package-data]
-md2epub = ["templates/**/*"]
-
 [project.scripts]
 md2epub = "md2epub.cli:main"
 
