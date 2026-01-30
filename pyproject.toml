@@ -12,7 +12,17 @@ classifiers = [ "Programming Language :: Python :: 3", "License :: OSI Approved 
 dependencies = [ "ebooklib", "markdown", "click", "PyYAML", "cookiecutter",]
 
 [project.optional-dependencies]
-dev = [ "pytest", "pytest-cov", "pre-commit", "nbstripout",]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "pre-commit",
+    "nbstripout",
+    "mkdocs",
+    "mkdocstrings[python]",
+]
+
+[tool.setuptools.package-data]
+md2epub = ["templates/**/*"]
 
 [project.scripts]
 md2epub = "md2epub.cli:main"
