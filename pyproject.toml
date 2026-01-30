@@ -21,14 +21,8 @@ dev = [
     "mkdocstrings[python]",
 ]
 
-[tool.setuptools.package-data]
-md2epub = ["templates/**/*"]
-
 [project.scripts]
 md2epub = "md2epub.cli:main"
-
-[tool.setuptools.package-data]
-md2epub = [ "templates/**/*",]
 
 [tool.pytest.ini_options]
 addopts = "--cov=src --cov-report=term-missing --cov-report=xml"
