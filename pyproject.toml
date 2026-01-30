@@ -16,6 +16,9 @@ classifiers = [
 dependencies = [
     "ebooklib",
     "markdown",
+    "click",
+    "PyYAML",
+    "cookiecutter",
 ]
 
 [project.optional-dependencies]
@@ -25,6 +28,9 @@ dev = [
     "pre-commit",
     "nbstripout",
 ]
+
+[tool.setuptools.package-data]
+md2epub = ["templates/**/*"]
 
 [project.scripts]
 md2epub = "md2epub.cli:main"

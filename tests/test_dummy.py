@@ -1,4 +1,3 @@
-import pytest
 import md2epub
 from md2epub import cli
 from unittest.mock import patch
@@ -7,11 +6,14 @@ def test_module_import():
     """Test that the package can be imported."""
     assert md2epub is not None
 
-def test_cli_main(capsys):
+from click.testing import CliRunner
+
+def test_cli_main():
     """Test the CLI main function prints the expected output."""
-    cli.main()
-    captured = capsys.readouterr()
-    assert "md2epub CLI" in captured.out
+    runner = CliRunner()
+    result = runner.invoke(cli.main, ['--help'])
+    assert result.exit_code == 0
+    assert "md2epub CLI" in result.output
 
 def test_cli_entry_point():
     """Test the __main__ block (simulation)."""

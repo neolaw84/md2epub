@@ -1,0 +1,13 @@
+{
+    "book_name": "My New Book",
+    "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_') }}",
+    "author_name": "Author Name",
+    "include_dedication": [
+        "yes",
+        "no"
+    ],
+    "include_acknowledgement": [
+        "yes",
+        "no"
+    ]
+}
