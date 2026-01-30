@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = [ "setuptools>=61.0",]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,18 +8,8 @@ version = "0.1.1"
 description = "A library and CLI to convert Markdown to Epub"
 readme = "README.md"
 requires-python = ">=3.12"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
-dependencies = [
-    "ebooklib",
-    "markdown",
-    "click",
-    "PyYAML",
-    "cookiecutter",
-]
+classifiers = [ "Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent",]
+dependencies = [ "ebooklib", "markdown", "click", "PyYAML", "cookiecutter",]
 
 [project.optional-dependencies]
 dev = [
@@ -34,12 +24,9 @@ dev = [
 [project.scripts]
 md2epub = "md2epub.cli:main"
 
-[tool.setuptools.package-data]
-md2epub = ["templates/**/*"]
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
 [tool.pytest.ini_options]
 addopts = "--cov=src --cov-report=term-missing --cov-report=xml"
-testpaths = ["tests"]
+testpaths = [ "tests",]
+
+[tool.setuptools.packages.find]
+where = [ "src",]
