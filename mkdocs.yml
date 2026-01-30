@@ -1,0 +1,35 @@
+site_name: md2epub
+site_description: A library and CLI to convert Markdown to Epub.
+site_author: Ed. Law
+repo_url: https://github.com/neolaw84/md2epub
+edit_uri: edit/main/docs/
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - python
+    - yaml
+    - bash
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_root_heading: true
+            show_source: true
+
+nav:
+  - Home: index.md
+  - User Guide:
+      - Installation & Usage: user_guide.md
+  - Developer Guide:
+      - Contributing & Testing: dev_guide.md
+  - API Reference:
+      - CLI: reference/cli.md
+      - Epub Builder: reference/epub_builder.md
+      - Converter: reference/converter.md
+  - License: license.md

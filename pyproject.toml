@@ -27,6 +27,8 @@ dev = [
     "pytest-cov",
     "pre-commit",
     "nbstripout",
+    "mkdocs",
+    "mkdocstrings[python]",
 ]
 
 [tool.setuptools.package-data]
