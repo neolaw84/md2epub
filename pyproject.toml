@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "md2epub"
-version = "0.1.0"
+version = "0.1.1"
 description = "A library and CLI to convert Markdown to Epub"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -31,11 +31,11 @@ dev = [
     "mkdocstrings[python]",
 ]
 
-[tool.setuptools.package-data]
-md2epub = ["templates/**/*"]
-
 [project.scripts]
 md2epub = "md2epub.cli:main"
+
+[tool.setuptools.package-data]
+md2epub = ["templates/**/*"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
