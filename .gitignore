@@ -210,3 +210,7 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 .coverage
+
+# Generated Books
+*.epub
+my_new_book

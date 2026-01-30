@@ -1,0 +1,15 @@
+title: "{{ cookiecutter.book_name }}"
+author: "{{ cookiecutter.author_name }}"
+language: en
+cover_image: cover.png
+front_matter:
+  - title.md
+  - copyright.md
+{%- if cookiecutter.include_dedication == 'yes' %}
+  - dedication.md
+{%- endif %}
+{%- if cookiecutter.include_acknowledgement == 'yes' %}
+  - acknowledgement.md
+{%- endif %}
+chapters:
+  - chapter_01.md
