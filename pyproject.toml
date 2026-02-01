@@ -9,7 +9,7 @@ description = "A library and CLI to convert Markdown to Epub"
 readme = "README.md"
 requires-python = ">=3.12"
 classifiers = [ "Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent",]
-dependencies = [ "ebooklib", "markdown", "click", "PyYAML", "cookiecutter",]
+dependencies = [ "ebooklib", "markdown", "click", "PyYAML", "cookiecutter", "langgraph", "langchain", "langchain_openai", "python-dotenv", ]
 
 [project.optional-dependencies]
 dev = [
@@ -19,6 +19,8 @@ dev = [
     "nbstripout",
     "mkdocs",
     "mkdocstrings[python]",
+    "jupyter",
+    "ipykernel",
 ]
 
 [project.scripts]
