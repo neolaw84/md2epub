@@ -36,5 +36,20 @@ def compile(path):
     except Exception as e:
         click.echo(f"Error compiling book: {e}", err=True)
 
+@main.command()
+@click.argument('epub_path', type=click.Path(exists=True, dir_okay=False))
+@click.argument('output_dir', type=click.Path())
+def unpack(epub_path, output_dir):
+    """Unpack an EPUB file into a Markdown book directory."""
+    click.echo(f"Unpacking {epub_path} into {output_dir}")
+    try:
+        from md2epub.epub_extractor import EpubExtractor
+        extractor = EpubExtractor(epub_path)
+        extractor.extract_metadata() # Ensure metadata is ready
+        extractor.save_project(output_dir)
+        click.echo(f"Successfully unpacked to {output_dir}")
+    except Exception as e:
+        click.echo(f"Error unpacking book: {e}", err=True)
+
 if __name__ == "__main__":
     main()
