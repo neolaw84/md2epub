@@ -7,6 +7,7 @@
 * **Project Scaffolding**: Quickly initialize a book directory with a standard structure using Cookiecutter templates.
 * **Markdown to EPUB**: Converts Markdown content into XHTML with a generated navigation structure.
 * **KDP-Ready Styling**: Includes a CSS template optimized for e-readers, handling fonts, margins, and scene breaks.
+* **Reverse Engineering**: Unpack existing EPUB files into a project directory for editing.
 * **Custom Formatting**: specific support for novel formatting:
 * `xxx` on a single line creates a centered **Scene Break**.
 * `***` on a single line creates a centered **Asterisk Break**.
@@ -75,6 +76,16 @@ md2epub compile my_new_book
 
 This will generate an `.epub` file in the current directory.
 
+### 6. Reverse Engineering (Unpacking)
+
+If you have an existing EPUB file that you want to convert into a `md2epub` project:
+
+```bash
+md2epub unpack my_book.epub my_project_dir
+```
+
+This will extract the metadata, chapters, and images into `my_project_dir`, ready for editing and recompilation.
+
 ---
 
 ## Guide for Developers
@@ -112,6 +123,7 @@ The codebase follows the SOLID principles, separating concerns into distinct mod
 
 * **`src/md2epub/cli.py`**: Handles user interaction and commands (`init`, `compile`).
 * **`src/md2epub/epub_builder.py`**: The core logic class (`EpubBuilder`) responsible for assembling the book, managing metadata, and ensuring strictly ordered spine items (Cover -> Front Matter -> TOC -> Chapters).
+* **`src/md2epub/epub_extractor.py`**: Handles the logic for unpacking EPUB files (`EpubExtractor`).
 * **`src/md2epub/converter.py`**: Handles text processing, converting Markdown to HTML and injecting custom classes for separators.
 * **`src/md2epub/css_template.py`**: Contains the `KDP_CSS` string used to style the EPUB.
 
