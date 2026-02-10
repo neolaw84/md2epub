@@ -214,3 +214,6 @@ __pycache__/
 # Generated Books
 *.epub
 my_new_book
+
+data
+notebooks_ed

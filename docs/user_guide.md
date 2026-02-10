@@ -60,3 +60,20 @@ md2epub compile my_new_book
 ```
 
 This will generate an .epub file in the current directory.
+
+## Reverse Engineering (Unpacking)
+
+If you have an existing EPUB file that you want to convert into a `md2epub` project structure (e.g., to recover source files or migrate an existing book):
+
+1. Run the `unpack` command:
+
+```bash
+md2epub unpack my_existing_book.epub my_project_dir
+```
+
+2. This will create `my_project_dir` containing:
+    * `metadata.yaml`: Reconstructed configuration file with Title, Author, and file ordering.
+    * `images/`: A directory containing all images extracted from the EPUB.
+    * Markdown files: Chapters and front matter converted from the EPUB's internal HTML.
+
+3. You can now edit the markdown files or `metadata.yaml` and re-compile the book using `md2epub compile`.
